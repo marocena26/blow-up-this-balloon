@@ -6,11 +6,33 @@
 }
 
 .body {
-  display: flex;
-  justify-content: center;
   height: 100vh;
+}
+
+.header {
+}
+
+.header-title {
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
   align-items: center;
-  font-family: var(--text-font-family);
+  height: 100vh;
+}
+
+.box-text {
+}
+
+.subtitle {
+}
+
+.instructions {
+}
+
+.explode-text {
 }
 
 .initial-balloon {
@@ -33,11 +55,4 @@
 }
 .hidden {
   display: none;
-}
-
-.text {
-  display: flex;
-  height: 400px;
-  width: 400px;
-  flex-direction: column;
 }

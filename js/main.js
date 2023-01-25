@@ -40,7 +40,7 @@ const colorBalloon = () => {
 
 //function to blow up the balloon
 const explodeBalloon = () => {
-  if (widthBalloon === 420 && heightBalloon === 420) {
+  if (widthBalloon >= 420 && heightBalloon >= 420) {
     balloon.classList.add("hidden");
     instructions.classList.add("hidden");
     explodeText.classList.remove("hidden");
@@ -74,37 +74,37 @@ const mouseOut = () => {
     heightBalloon > 200 &&
     balloon.classList.contains("initial-balloon")
   ) {
-    widthBalloon = widthBalloon - 10;
-    heightBalloon = heightBalloon - 10;
+    widthBalloon = widthBalloon - 5;
+    heightBalloon = heightBalloon - 5;
     balloon.style.width = `${widthBalloon}px`;
     balloon.style.height = `${heightBalloon}px`;
     balloon.classList.contains("initial-balloon");
     balloon.classList.remove("initial-balloon");
-    balloon.classList.add("balloon-green");
+    balloon.classList.add("balloon-blue");
   } else if (
     widthBalloon > 200 &&
     heightBalloon > 200 &&
     balloon.classList.contains("balloon-green")
   ) {
-    widthBalloon = widthBalloon - 10;
-    heightBalloon = heightBalloon - 10;
+    widthBalloon = widthBalloon - 5;
+    heightBalloon = heightBalloon - 5;
     balloon.style.width = `${widthBalloon}px`;
     balloon.style.height = `${heightBalloon}px`;
     balloon.classList.contains("balloon-green");
     balloon.classList.remove("balloon-green");
-    balloon.classList.add("balloon-blue");
+    balloon.classList.add("initial-balloon");
   } else if (
     widthBalloon > 200 &&
     heightBalloon > 200 &&
     balloon.classList.contains("balloon-blue")
   ) {
-    widthBalloon = widthBalloon - 10;
-    heightBalloon = heightBalloon - 10;
+    widthBalloon = widthBalloon - 5;
+    heightBalloon = heightBalloon - 5;
     balloon.style.width = `${widthBalloon}px`;
     balloon.style.height = `${heightBalloon}px`;
     balloon.classList.contains("balloon-blue");
     balloon.classList.remove("balloon-blue");
-    balloon.classList.add("initial-balloon");
+    balloon.classList.add("balloon-green");
   }
 };
 
