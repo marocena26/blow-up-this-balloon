@@ -1,37 +1,37 @@
+:root {
+  --color-red: #dc143c;
+  --color-green: #9acd32;
+  --color-blue: DeepSkyBlue;
+  --text-font-family: "Roboto", sans-serif;
+}
+
 .body {
   display: flex;
   justify-content: center;
   height: 100vh;
   align-items: center;
+  font-family: var(--text-font-family);
 }
 
 .initial-balloon {
   height: 200px;
   width: 200px;
-  background-color: red;
+  background-color: var(--color-red);
   border-radius: 100px;
 }
 
 .balloon-green {
-  background-color: green;
+  background-color: var(--color-green);
 }
 
 .balloon-blue {
-  background-color: blue;
+  background-color: var(--color-blue);
 }
 
 .balloon-red {
-  background-color: red;
+  background-color: var(--color-red);
 }
-.hidden-balloon {
-  display: none;
-}
-
-.hidden-text {
-  display: none;
-}
-
-.hidden-btn {
+.hidden {
   display: none;
 }
 

@@ -1,15 +1,19 @@
 "use strict";
 
+//CONSTANT
 const balloon = document.querySelector(".js-balloon");
 const explodeText = document.querySelector(".js-explode-text");
+const instructions = document.querySelector(".js-box-text");
 const btn = document.querySelector(".js-btn");
 
+//VARIABLES
 let widthBalloon = 200;
 let heightBalloon = 200;
 let borderBalloon = 100;
 
-//función para incrementar el tamaño del globo
+//FUNCTIONS
 
+//function to increase the size of the balloon
 const increaseBalloon = (ev) => {
   ev.preventDefault();
   widthBalloon = widthBalloon + 10;
@@ -20,8 +24,7 @@ const increaseBalloon = (ev) => {
   balloon.style.borderRadius = `${borderBalloon}px`;
 };
 
-//función para cambiar el color del globo
-
+//function to change the colour of the balloon
 const colorBalloon = () => {
   if (balloon.classList.contains("initial-balloon")) {
     balloon.classList.remove("initial-balloon");
@@ -35,16 +38,20 @@ const colorBalloon = () => {
   }
 };
 
+//function to blow up the balloon
 const explodeBalloon = () => {
   if (widthBalloon === 420 && heightBalloon === 420) {
-    balloon.classList.add("hidden-balloon");
-    explodeText.classList.remove("hidden-text");
+    balloon.classList.add("hidden");
+    instructions.classList.add("hidden");
+    explodeText.classList.remove("hidden");
   }
 };
-//función para resetear
+
+//reset function
 const handleReset = () => {
-  balloon.classList.remove("hidden-balloon");
-  explodeText.classList.add("hidden-text");
+  balloon.classList.remove("hidden");
+  instructions.classList.remove("hidden");
+  explodeText.classList.add("hidden");
   widthBalloon = 200;
   heightBalloon = 200;
   borderBalloon = 100;
@@ -53,15 +60,14 @@ const handleReset = () => {
   balloon.style.borderRadius = `${borderBalloon}px`;
 };
 
-//funcion manejadora del evento
+//event handler function
 const handleBalloon = (ev) => {
   increaseBalloon(ev);
   colorBalloon();
   explodeBalloon();
 };
 
-//función para cambiar los colores y tamaño con el ratón
-
+//function to change colours and size with mouseover
 const mouseOut = () => {
   if (
     widthBalloon > 200 &&
@@ -102,6 +108,7 @@ const mouseOut = () => {
   }
 };
 
+//EVENTS
 balloon.addEventListener("click", handleBalloon);
-balloon.addEventListener("mouseout", mouseOut); //evento para que cambie de color y de tamaño
+balloon.addEventListener("mouseout", mouseOut);
 explodeText.addEventListener("click", handleReset);
