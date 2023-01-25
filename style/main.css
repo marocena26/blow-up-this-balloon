@@ -7,32 +7,52 @@
 
 .body {
   height: 100vh;
+  padding: 10px;
+  font-family: var(--text-font-family);
 }
 
 .header {
+  text-align: center;
 }
 
 .header-title {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 30px;
+  padding: 50px;
 }
 
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: baseline;
   align-items: center;
   height: 100vh;
 }
 
 .box-text {
+  background-color: white;
+  padding: 25px;
+  margin-bottom: 70px;
+  border-radius: 20px;
 }
 
 .subtitle {
+  font-weight: 600;
+  font-size: 20px;
+  padding: 10px 0;
 }
 
 .instructions {
+  font-size: 20px;
 }
 
 .explode-text {
+  background-color: white;
+  padding: 25px;
+  margin-bottom: 70px;
+  border-radius: 20px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .initial-balloon {
@@ -40,18 +60,22 @@
   width: 200px;
   background-color: var(--color-red);
   border-radius: 100px;
+  cursor: pointer;
 }
 
 .balloon-green {
   background-color: var(--color-green);
+  cursor: pointer;
 }
 
 .balloon-blue {
   background-color: var(--color-blue);
+  cursor: pointer;
 }
 
 .balloon-red {
   background-color: var(--color-red);
+  cursor: pointer;
 }
 .hidden {
   display: none;
