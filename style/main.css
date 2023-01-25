@@ -2,6 +2,7 @@
   --color-red: #dc143c;
   --color-green: #9acd32;
   --color-blue: DeepSkyBlue;
+  --color-sky: #74cee2;
   --text-font-family: "Roboto", sans-serif;
 }
 
@@ -9,7 +10,7 @@
   height: 100vh;
   padding: 10px;
   font-family: var(--text-font-family);
-  background-color: #74cee2;
+  background-color: var(--color-sky);
 }
 
 .header {
@@ -27,13 +28,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
 }
 
 .box-text {
   background-color: white;
   padding: 25px;
-  margin-bottom: 70px;
   border-radius: 20px;
 }
 
@@ -50,7 +49,6 @@
 .explode-text {
   background-color: white;
   padding: 25px;
-  margin-bottom: 70px;
   border-radius: 20px;
   font-size: 20px;
   cursor: pointer;
@@ -71,7 +69,6 @@
   cursor: pointer;
   position: absolute;
   margin-top: 350px;
-
   animation: bubble 3s infinite;
 }
 
@@ -80,12 +77,12 @@
     height: 200px;
     width: 200px;
     background-color: var(--color-red);
-    border-radius: 100px;
+    border: 2px solid black;
+    border-radius: 50%;
+    box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.07);
     cursor: pointer;
     position: absolute;
-    border-radius: 50%;
-    left: 45%;
-    top: 25%;
+    margin-top: 200px;
     animation: bubble 3s infinite;
   }
 }
@@ -114,6 +111,7 @@
   background: rgba(0, 0, 0, 0.2);
 }
 
+/*COLORS BALLOON */
 .green {
   background-color: var(--color-green);
   cursor: pointer;
@@ -163,6 +161,21 @@
   border-radius: 50%;
 }
 
+@media all and (min-width: 768px) {
+  .cloud {
+    background: white;
+    width: 100px;
+    height: 35px;
+    border-radius: 35px;
+    position: absolute;
+    left: 35%;
+    margin-top: 200px;
+    animation: cloud infinite 20s;
+    box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.07);
+    z-index: 100;
+  }
+}
+
 .cloudTwo {
   background: white;
   width: 100px;
@@ -198,16 +211,17 @@
 }
 
 @media all and (min-width: 768px) {
-  .cloud {
+  .cloudTwo {
     background: white;
     width: 100px;
     height: 35px;
     border-radius: 35px;
     position: absolute;
-    left: 35%;
-    margin-top: 200px;
+    margin-top: 500px;
+    margin-left: 250px;
     animation: cloud infinite 20s;
-    box-shadow: 0 3px 5px transparentize(#3a506b, 0.4);
+    box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.07);
+    z-index: 100;
   }
 }
 
@@ -232,28 +246,5 @@
   }
   50% {
     transform: translateY(-30px);
-  }
-}
-
-@keyframes bobble {
-  0% {
-    transform: rotate(0deg);
-    margin: -0;
-  }
-  25% {
-    transform: rotate(-5deg);
-    margin: -15 0 0 -15px;
-  }
-  50% {
-    transform: rotate(0deg);
-    margin: 10;
-  }
-  75% {
-    transform: rotate(5deg);
-    margin: -15px -15px 0 0;
-  }
-  100% {
-    transform: rotate(0deg);
-    margin: 0;
   }
 }
