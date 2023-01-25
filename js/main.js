@@ -26,15 +26,15 @@ const increaseBalloon = (ev) => {
 
 //function to change the colour of the balloon
 const colorBalloon = () => {
-  if (balloon.classList.contains("initial-balloon")) {
-    balloon.classList.remove("initial-balloon");
-    balloon.classList.add("balloon-green");
-  } else if (balloon.classList.contains("balloon-green")) {
-    balloon.classList.remove("balloon-green");
-    balloon.classList.add("balloon-blue");
-  } else if (balloon.classList.contains("balloon-blue")) {
-    balloon.classList.remove("balloon-blue");
-    balloon.classList.add("initial-balloon");
+  if (balloon.classList.contains("red")) {
+    balloon.classList.remove("red");
+    balloon.classList.add("green");
+  } else if (balloon.classList.contains("green")) {
+    balloon.classList.remove("green");
+    balloon.classList.add("blue");
+  } else if (balloon.classList.contains("blue")) {
+    balloon.classList.remove("blue");
+    balloon.classList.add("red");
   }
 };
 
@@ -72,39 +72,39 @@ const mouseOut = () => {
   if (
     widthBalloon > 200 &&
     heightBalloon > 200 &&
-    balloon.classList.contains("initial-balloon")
+    balloon.classList.contains("red")
   ) {
     widthBalloon = widthBalloon - 5;
     heightBalloon = heightBalloon - 5;
     balloon.style.width = `${widthBalloon}px`;
     balloon.style.height = `${heightBalloon}px`;
-    balloon.classList.contains("initial-balloon");
-    balloon.classList.remove("initial-balloon");
-    balloon.classList.add("balloon-blue");
+    balloon.classList.contains("red");
+    balloon.classList.remove("red");
+    balloon.classList.add("blue");
   } else if (
     widthBalloon > 200 &&
     heightBalloon > 200 &&
-    balloon.classList.contains("balloon-green")
+    balloon.classList.contains("green")
   ) {
     widthBalloon = widthBalloon - 5;
     heightBalloon = heightBalloon - 5;
     balloon.style.width = `${widthBalloon}px`;
     balloon.style.height = `${heightBalloon}px`;
-    balloon.classList.contains("balloon-green");
-    balloon.classList.remove("balloon-green");
-    balloon.classList.add("initial-balloon");
+    balloon.classList.contains("green");
+    balloon.classList.remove("green");
+    balloon.classList.add("red");
   } else if (
     widthBalloon > 200 &&
     heightBalloon > 200 &&
-    balloon.classList.contains("balloon-blue")
+    balloon.classList.contains("blue")
   ) {
     widthBalloon = widthBalloon - 5;
     heightBalloon = heightBalloon - 5;
     balloon.style.width = `${widthBalloon}px`;
     balloon.style.height = `${heightBalloon}px`;
-    balloon.classList.contains("balloon-blue");
-    balloon.classList.remove("balloon-blue");
-    balloon.classList.add("balloon-green");
+    balloon.classList.contains("blue");
+    balloon.classList.remove("blue");
+    balloon.classList.add("green");
   }
 };
 

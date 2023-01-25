@@ -9,6 +9,7 @@
   height: 100vh;
   padding: 10px;
   font-family: var(--text-font-family);
+  background-color: #74cee2;
 }
 
 .header {
@@ -55,28 +56,159 @@
   cursor: pointer;
 }
 
-.initial-balloon {
+.hidden {
+  display: none;
+}
+
+/* BALLOON */
+.balloon {
   height: 200px;
   width: 200px;
   background-color: var(--color-red);
   border-radius: 100px;
   cursor: pointer;
+  position: absolute;
+  border-radius: 50%;
+  left: 45%;
+  top: 25%;
+  animation: bubble 3s infinite;
 }
 
-.balloon-green {
+.green {
   background-color: var(--color-green);
   cursor: pointer;
 }
 
-.balloon-blue {
+.blue {
   background-color: var(--color-blue);
   cursor: pointer;
 }
 
-.balloon-red {
+.red {
   background-color: var(--color-red);
   cursor: pointer;
 }
-.hidden {
-  display: none;
+
+.balloon:after {
+  position: absolute;
+  content: "";
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 75px;
+  border: 3px solid;
+  transform: rotate(37deg);
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  background: none;
+  left: 50%;
+  margin-left: -45px;
+  top: 50%;
+  margin-top: -45px;
+}
+
+.balloon:before {
+  position: absolute;
+  content: "";
+  bottom: -25px;
+  left: 57%;
+  margin-left: -20px;
+  width: 0px;
+  height: 0px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid black;
+}
+
+.rope {
+  background: black;
+  width: 2px;
+  height: 160px;
+  left: 53%;
+  margin-left: -3px;
+  position: absolute;
+  bottom: -90%;
+  border-radius: 5px;
+}
+
+/* CLOUD */
+.cloud {
+  background: white;
+  width: 100px;
+  height: 35px;
+  border-radius: 35px;
+  position: absolute;
+  left: 35%;
+  margin-top: 200px;
+  animation: cloud infinite 20s;
+  box-shadow: 0 3px 5px transparentize(#3a506b, 0.4);
+}
+
+.cloud:before {
+  content: "";
+  height: 40px;
+  width: 40px;
+  background: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+.cloud:after {
+  content: "";
+  height: 60px;
+  width: 60px;
+  background: white;
+  position: absolute;
+  bottom: 5px;
+  right: 15%;
+  border-radius: 50%;
+}
+
+@keyframes cloud {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-30px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes bubble {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes bobble {
+  0% {
+    transform: rotate(0deg);
+    margin: -0;
+  }
+  25% {
+    transform: rotate(-5deg);
+    margin: -15 0 0 -15px;
+  }
+  50% {
+    transform: rotate(0deg);
+    margin: 10;
+  }
+  75% {
+    transform: rotate(5deg);
+    margin: -15px -15px 0 0;
+  }
+  100% {
+    transform: rotate(0deg);
+    margin: 0;
+  }
 }
