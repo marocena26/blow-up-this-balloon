@@ -8,6 +8,21 @@ Create a **little game** about **blowing up a balloon**. The main **requirement*
 
 > **NOTE:** Direct link to the project by clicking on the following **[link](https://marocena26.github.io/blow-up-this-balloon/)**.
 
+## 👾 Description 
+
+**Welcome to Blow up this balloon!**
+
+In this repository we present you a **simple, intuitive website adapted to any kind of device** (mobile, tablet and PC) so you can take a look at it at any time. **Designed and developed with HTML, CSS and JS**, with just a few clicks you can blow up a balloon until it explodes. 
+
+### How to play
+
+- Click on the balloon to make it grow in size (and colour). Will grow by 10 px per click.
+- To take it back to its previous state, just remove the cursor from the balloon. Will decrease by 5px and return to the previous colour.
+- When the balloon reaches 420px... it will explode!
+- To restart the game simply click on the text.
+
+⚠️ **Caution**: it is advisable not to hit it too quickly so that the colour changes do not damage the eyes.
+
 ## 📝 Requirements
 
 The exercise consists on developing a web-site using the following **elements**:
